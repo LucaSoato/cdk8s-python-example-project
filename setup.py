@@ -3,6 +3,9 @@ import setuptools
 with open("README.md") as fp:
     long_description = fp.read()
 
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+
 setuptools.setup(
     name="myexamplechart",
     version="0.0.1",
@@ -16,12 +19,7 @@ setuptools.setup(
     package_dir={"": "myexamplechart"},
     packages=setuptools.find_packages(where="myexamplechart"),
 
-    install_requires=[
-        "constructs",  # TODO: Check they right constructs version
-        "cdk8s==2.2.21",
-        "cdk8s-plus-22",
-
-    ],
+    install_requires=required,
 
     python_requires=">=3.9",
 
