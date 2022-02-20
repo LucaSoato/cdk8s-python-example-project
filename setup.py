@@ -19,8 +19,6 @@ setuptools.setup(
     install_requires=[
         "constructs",  # TODO: Check they right constructs version
         "cdk8s==2.2.21",
-
-        # TODO: Check if this package should be explicited here, even if it's not in pip
         "cdk8s-plus-22",
 
     ],

@@ -26,7 +26,7 @@ build:
 		@docker build -t cdk8s-${project_name} .
 
 		@echo Downloading the imports defined in cdk8s.yaml
-		# Cdk8s import can be used to import CRDs in the project
+		@# Cdk8s import can be used to import CRDs in the project
 		@docker run -it --entrypoint "npx" -u node -v ${current_dir}:/usr/src/app cdk8s-${project_name}:latest cdk8s import --language python
 
 synth:
