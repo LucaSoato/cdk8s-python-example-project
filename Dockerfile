@@ -114,6 +114,9 @@ RUN set -eux; \
 
 WORKDIR /usr/src/app
 
+COPY requirements.txt ./
+
+
 RUN chown -R node:node /usr/src/app
 RUN chmod -R 700 /usr/src/app
 
@@ -129,8 +132,8 @@ USER node
 
 # Installing Python dependencies
 
-RUN pip install pipenv && \
-    pip install -r requirements.txt
+RUN pip install pipenv --use-deprecated=legacy-resolver && \
+    pip install -r requirements.txt  --use-deprecated=legacy-resolver
 
 # Configuring PATH to use cdk8s CLI
 

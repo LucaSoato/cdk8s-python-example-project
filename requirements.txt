@@ -1,1 +1,5 @@
--e .
+# Using "-e ." solves redundancy but this means that the whole project should be available during docker image build...
+constructs
+cdk8s==2.2.21
+cdk8s-plus-22
+
